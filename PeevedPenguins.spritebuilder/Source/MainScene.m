@@ -13,7 +13,7 @@
 - (void) play {
     
     CCScene *gameplayScene = [CCBReader loadAsScene: @"Gameplay"];
-    [[CCDirector sharedDirector] replaceScene:Level1];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
 @end
