@@ -21,8 +21,8 @@
 }
 
 
-- (void) touchBegan:(UITouch *)touchwithEvent:(UIEvent *)event {
-    // Called on every touch in this scene
+// called on every touch in this scene
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     [self launchPenguin];
 }
 
