@@ -8,8 +8,10 @@
 
 #import "CCNode.h"
 
-@interface Gameplay : CCNode
-
-@property (nonatomic,strong) CCNode* contentNode;
+@interface Gameplay : CCNode {
+   
+    CCNode* contentNode;
+    
+}
 
 @end
