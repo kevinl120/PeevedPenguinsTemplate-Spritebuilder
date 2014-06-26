@@ -10,7 +10,7 @@
 
 @interface Gameplay : CCNode {
    
-    CCNode* contentNode;
+    CCNode* _contentNode;
     
 }
 
