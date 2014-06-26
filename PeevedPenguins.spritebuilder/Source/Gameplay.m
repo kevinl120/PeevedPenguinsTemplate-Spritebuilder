@@ -10,13 +10,15 @@
 
 @implementation Gameplay {
     
-    CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
     CCNode *_levelNode;
     CCNode *_mouseJointNode;
-    CCPhysicsJoint *_mouseJoint;
     CCNode* _contentNode;
     CCNode* _pullbackNode;
+    
+    CCPhysicsJoint *_mouseJoint;
+    
+    CCPhysicsNode *_physicsNode;
 }
 
 - (void) didLoadFromCCB {
@@ -33,6 +35,7 @@
     
     // Nothing shall collide with our invisible nodes
     _pullbackNode.physicsBody.collisionMask = @[];
+    _mouseJointNode
 }
 
 
