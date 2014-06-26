@@ -40,7 +40,8 @@
 
 
 - (void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    CGPoint touchLocation = [touch locationInNode:_contentNode];
+    
+    CGPoint touchLocation = [touch locationInNode: _contentNode];
     
     // Start catapult dragging when a touch inside of the catapult arm occurs
     if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
@@ -61,6 +62,15 @@
 }
 
 
+- (void) releaseCatapult {
+    if (_mouseJoint != nil) {
+        // Releases the joint and lets the catapult snap back
+        [_mouseJoint invalidate];
+        _mouseJoint = nil;
+    }
+}
+
+
 - (void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     // When touches end, meaning the user releases their finger, release the catapult
     [self releaseCatapult];
@@ -70,15 +80,6 @@
 - (void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
     //When touches are cancelled, meaning the user drags their finger off the screen or onto something else, release the catapult
     [self releaseCatapult];
-}
-
-
-- (void) releaseCatapult {
-    if (_mouseJoint != nil) {
-        // Releases the joint and lets the catapult snap back
-        [_mouseJoint invalidate];
-        _mouseJoint = nil;
-    }
 }
 
 
