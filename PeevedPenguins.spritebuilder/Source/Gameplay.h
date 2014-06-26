@@ -11,6 +11,7 @@
 @interface Gameplay : CCNode {
    
     CCNode* _contentNode;
+    CCNode* _pullbackNode;
     
 }
 
