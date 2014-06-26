@@ -13,6 +13,10 @@
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
     CCNode *_levelNode;
+    CCNode *_mouseJointNode;
+    CCPhysicsJoint *_mouseJoint;
+    CCNode* _contentNode;
+    CCNode* _pullbackNode;
 }
 
 - (void) didLoadFromCCB {
