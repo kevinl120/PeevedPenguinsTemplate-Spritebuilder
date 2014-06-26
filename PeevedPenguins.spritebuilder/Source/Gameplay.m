@@ -13,6 +13,7 @@
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
     CCNode *_levelNode;
+    CCNode *_contentNode = [CCBReader load:@"CCNode"];
 }
 
 - (void) didLoadFromCCB {
@@ -46,12 +47,10 @@
     CGPoint force = ccpMult(launchDirection, 8000);
     [penguin.physicsBody applyForce:force];
     
-    CCNode *_contentNode;
-    
     // Ensure followed object is in visible are when starting
     self.position = ccp(0,0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
-    [_contentNode runAction:follow];
+    [self runAction:follow];
 }
 
 
