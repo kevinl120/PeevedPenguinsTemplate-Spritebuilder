@@ -10,4 +10,6 @@
 
 @interface Gameplay : CCNode
 
+@property (nonatomic,strong) CCNode* contentNode;
+
 @end
