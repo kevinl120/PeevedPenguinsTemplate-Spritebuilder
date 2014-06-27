@@ -10,8 +10,6 @@
 
 @interface WaitingPenguin : CCSprite
 
-- (void) didLoadFromCCB;
-- (void)startBlinkAndJump;
 
 
 @end
