@@ -10,6 +10,7 @@
 
 @interface Penguin : CCSprite
 
+Penguin;
 @property (nonatomic, assign) BOOL launched;
 
 @end
