@@ -94,7 +94,7 @@
 					<key>value</key>
 					<array>
 						<real>10</real>
-						<real>9</real>
+						<real>10</real>
 					</array>
 				</dict>
 				<dict>
@@ -800,7 +800,7 @@
 										<key>value</key>
 										<array>
 											<real>240</real>
-											<real>183</real>
+											<real>182</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
