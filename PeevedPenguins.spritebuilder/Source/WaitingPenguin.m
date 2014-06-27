@@ -21,7 +21,6 @@
 
 
 - (void)startBlinkAndJump {
-    
     // the animation manager of each node is stored in the 'animationManager' property
     CCAnimationManager* animationManager = self.animationManager;
     // timelines can be referenced and run by name
