@@ -23,7 +23,7 @@
     // The animation manager of each node is stored in the 'animationManager' property
     CCAnimationManager* animationManager = self.animationManager;
     // Timelines can be referenced and run by name
-    [animationManager runAnimationsForSequenceNamed:@"BlinkAndJump"];
+//    [animationManager runAnimationsForSequenceNamed:@"BlinkAndJump"];
     
 }
 
