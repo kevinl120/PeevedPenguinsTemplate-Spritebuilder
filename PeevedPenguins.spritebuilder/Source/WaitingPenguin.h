@@ -10,4 +10,5 @@
 
 @interface WaitingPenguin : CCSprite
 
+
 @end
