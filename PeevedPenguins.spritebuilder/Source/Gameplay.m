@@ -17,7 +17,7 @@
     CCNode *_mouseJointNode;
     CCNode *_contentNode;
     CCNode *_pullbackNode;
-    CCNode *_currentPenguin;
+    Penguin *_currentPenguin;
     
     CCAction *_followPenguin;
     
@@ -65,7 +65,7 @@
         
         
         // Create a penguin from the ccb-file
-        _currentPenguin = [CCBReader load:@"Penguin"];
+        _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
         // Initially position it on the scoop. 34, 138 is the postition in the node space of the _catapultArm
         CGPoint penguinPosition = [_catapultArm convertToWorldSpace: ccp(34, 138)];
         // Transform the world postition to the node space to which the penguin will be added (_physicsNode)
@@ -108,6 +108,8 @@
         // Follow the flying penguin
         _followPenguin = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
         [_contentNode runAction:_followPenguin];
+        
+        _currentPenguin.launched = TRUE;
     }
 }
 
@@ -180,27 +182,29 @@
 
 
 - (void) update:(CCTime)delta {
-    // if speed is below minimum speed, assume this attempt is over
     
-    static const float MIN_SPEED = 5.f;
-    
-    if (ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED){
-        [self nextAttempt];
-        return;
-    }
-    
-    int xMin = _currentPenguin.boundingBox.origin.x;
-    
-    if (xMin < self.boundingBox.origin.x) {
-        [self nextAttempt];
-        return;
-    }
-    
-    int xMax = xMin + _currentPenguin.boundingBox.size.width;
-    
-    if (xMax > (self.boundingBox.origin.x + self.boundingBox.size.width)) {
-        [self nextAttempt];
-        return;
+    if (_currentPenguin.launched) {
+        // if speed is below minimum speed, assume this attempt is over
+        static const float MIN_SPEED = 5.f;
+        
+        if (ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED){
+            [self nextAttempt];
+            return;
+        }
+        
+        int xMin = _currentPenguin.boundingBox.origin.x;
+        
+        if (xMin < self.boundingBox.origin.x) {
+            [self nextAttempt];
+            return;
+        }
+        
+        int xMax = xMin + _currentPenguin.boundingBox.size.width;
+        
+        if (xMax > (self.boundingBox.origin.x + self.boundingBox.size.width)) {
+            [self nextAttempt];
+            return;
+        }
     }
 }
 
