@@ -39,9 +39,6 @@
     CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
     [_levelNode addChild:level];
     
-    // Visualize physics bodies and joints
-    _physicsNode.debugDraw = TRUE;
-    
     // Nothing shall collide with our invisible nodes
     _pullbackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
