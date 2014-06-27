@@ -26,7 +26,7 @@
     
     CCPhysicsNode *_physicsNode;
     
-    static const float MIN_SPEED = 5.f;
+    
 }
 
 - (void) didLoadFromCCB {
@@ -181,6 +181,9 @@
 
 - (void) update:(CCTime)delta {
     // if speed is below minimum speed, assume this attempt is over
+    
+    static const float MIN_SPEED = 5.f;
+    
     if (ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED){
         [self nextAttempt];
         return;
