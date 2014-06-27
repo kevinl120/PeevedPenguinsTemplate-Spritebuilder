@@ -7,6 +7,7 @@
 //
 
 #import "Gameplay.h"
+#import "Penguin.h"
 
 #import "CCPhysics+ObjectiveChipmunk.h"
 
