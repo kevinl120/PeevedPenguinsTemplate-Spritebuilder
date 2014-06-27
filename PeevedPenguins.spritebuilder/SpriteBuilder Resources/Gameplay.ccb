@@ -1126,8 +1126,8 @@
 									<key>points</key>
 									<array>
 										<array>
-											<real>0.0</real>
-											<real>0.0</real>
+											<real>-95.56640625</real>
+											<real>-85.4609375</real>
 										</array>
 									</array>
 									<key>polygons</key>
@@ -1195,6 +1195,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
