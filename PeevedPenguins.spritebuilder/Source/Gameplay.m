@@ -45,7 +45,6 @@
     
     _physicsNode.collisionDelegate = self;
     
-    _physicsNode.debugDraw = TRUE;
 }
 
 
